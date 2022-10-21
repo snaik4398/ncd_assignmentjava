@@ -9,7 +9,15 @@ import javax.servlet.http.HttpServletResponse;
 
 public class calc extends HttpServlet{
   public void service(HttpServletRequest req,HttpServletResponse res) throws IOException {
-	  
+	  PrintWriter out=res.getWriter();
+	  out.println("<!DOCTYPE html>");
+      out.println("<html>");
+      out.println("<head>");
+      out.println("<title>NCD Risk Assessment Checklist</title> ");
+      out.println("</head>");
+      out.println("<body>");
+
+
 	  int i=Integer.parseInt(req.getParameter("age"));
 	  
 	  int j1=Integer.parseInt(req.getParameter("2pp"));
@@ -19,7 +27,6 @@ public class calc extends HttpServlet{
 	  int j5=Integer.parseInt(req.getParameter("6pp"));
 	  
 	  int k=i+j1+j2+j3+j4+j5;
-	  PrintWriter out=res.getWriter();
 	  out.println("result is :"+k);
 	  if(k >= 4)
 	  {
@@ -29,6 +36,15 @@ public class calc extends HttpServlet{
 		  out.println(" NO NEED TO SCRINNING");
 	  }
 
+	  out.println("</h2><br><br><button type=\"reset\"  onclick=history.back() align=center>Go Back</button>");
+      out.println("</body>");
+      out.println("</html>");
+     
+	  
+	  
+	  
+	  
+	  
   }
   
 
